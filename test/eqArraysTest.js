@@ -1,4 +1,10 @@
 const eqArrays = require('../eqArrays');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
+describe('#eqArrays', () => {
+  it("returns false from [[2, 3], [4]], [[2, 3], 4]", () => {
+    const actual = [[2, 3], [4]];
+    const expected = false;
+    assert.deepEqual(eqArrays(actual, [[2, 3], 4]), expected);
+  });
+});
